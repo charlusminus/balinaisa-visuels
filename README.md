@@ -1,12 +1,13 @@
 # balinaisa-visuels
 
-Hébergement public des visuels du catalogue Balinaisa (servis par GitHub Pages),
-consommés par la sheet catalogue de Dom et le pipeline n8n (référence image pour Gemini).
+Visuels produits du catalogue Balinaisa (mobilier teck massif), optimisés pour le
+simulateur IA de lead-gen (référence produit envoyée au générateur d'image).
 
-- Format : JPEG, fond blanc, max 1600 px, qualité 82 (progressif, optimisé).
-- Nommage : `<id-produit>-<n>.jpg` (`n` = 1 ou 2, l'angle).
-- Source de vérité produits/ids : `bali-assets/n8n/catalogue-source-of-truth-2026-07-17.csv`.
+- 1 fichier JPEG par référence, dans `products/<id>.jpg`.
+- Les produits disposant de deux angles ont un **composite face + dos** (les deux vues
+  dans un seul fichier), ce qui garantit les deux angles au générateur sans alourdir le payload.
+- Images compressées (~100 Ko en moyenne), fond neutre.
 
-URL d'un visuel : `https://charlusminus.github.io/balinaisa-visuels/<id>-<n>.jpg`
+Servi via jsDelivr : `https://cdn.jsdelivr.net/gh/charlusminus/balinaisa-visuels@main/products/<id>.jpg`
 
-Repo d'assets uniquement : pas de front, pas de code. Push direct pour rafraîchir un visuel.
+Source de vérité du catalogue (ids, prix, descriptifs) : dépôt privé `balinaisa-assets` (`n8n/catalogue-node.js`).
